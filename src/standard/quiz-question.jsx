@@ -28,6 +28,8 @@ var QuizQuestion = React.createClass({displayName: 'QuizQuestion',
           name={a.label}
           label={a.label}
           value={a.label}
+          questionNum={_that.props.questionNum}
+          choiceNum={i}
         />
       );
     });
@@ -46,7 +48,7 @@ var QuizQuestion = React.createClass({displayName: 'QuizQuestion',
       <div className="quiz-question">
         <h1>{this.props.title}</h1>
         <RadioGroup
-          name="question"
+          name={'question' + this.props.questionNum}
           ref="question"
           onChange={this.handleChange}
           checkedIndex={this.state.answerChoice}
