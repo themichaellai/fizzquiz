@@ -8,14 +8,14 @@ var Quiz = React.createClass({displayName: 'Quiz',
       questions: [
         {
           title: 'This is a question',
+          correctAnswer: 1,
+          answerDescription: 'Choice 2 is the logical correct choice, duh',
           choices: [
             {
               label: 'Choice 1',
-              value: false
             },
             {
               label: 'Choice 2',
-              value: false
             }
           ]
         }
@@ -32,6 +32,8 @@ var Quiz = React.createClass({displayName: 'Quiz',
           questionNum={i}
           choices={q.choices}
           changeChoiceValue={_that.changeChoiceValue}
+          correctAnswer={q.correctAnswer}
+          answerDescription={q.answerDescription}
         />
       );
     });
