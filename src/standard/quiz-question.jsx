@@ -2,7 +2,7 @@ var React = require('react/addons');
 var cx = React.addons.classSet;
 var PropTypes = React.PropTypes;
 var QuizChoice = require('./quiz-choice.jsx');
-var RadioGroup = require('./radio-group.jsx');
+var RadioGroup = require('../radio-group.jsx');
 var _ = require('underscore');
 
 var QuizQuestion = React.createClass({displayName: 'QuizQuestion',
@@ -16,7 +16,6 @@ var QuizQuestion = React.createClass({displayName: 'QuizQuestion',
     description: PropTypes.string,
     choices: PropTypes.array,
     questionNum: PropTypes.number.isRequired,
-    changeChoiceValue: PropTypes.func.isRequired,
     correctAnswer: PropTypes.number.isRequired,
     answerDescription: PropTypes.string
   },
@@ -29,9 +28,6 @@ var QuizQuestion = React.createClass({displayName: 'QuizQuestion',
           name={a.label}
           label={a.label}
           value={a.label}
-          choiceNum={i}
-          questionNum={_that.props.questionNum}
-          changeChoiceValue={_that.props.changeChoiceValue}
         />
       );
     });
